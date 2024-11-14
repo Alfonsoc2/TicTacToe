@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+#gameBox {
+    display: flex;
+    background-color: #f0f0f0;
+    width: 500px;
+    height: 500px;
+}
