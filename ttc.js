@@ -37,6 +37,10 @@ function checkWinner() {
       const cellA = gridCells[a].textContent;
       const cellB = gridCells[b].textContent;
       const cellC = gridCells[C].textContent;
-        
+    
+      if (cellA && cellA === cellB & cellB === cellC) {
+        return cellA;
+      }
      }
+    return null;
 }
