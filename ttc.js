@@ -21,7 +21,7 @@ reset.addEventListener('click', () => {
     currentPlayer = 'X' ;
 });
 
-function checkWinnwer() {
+function checkWinner() {
     const winPatterns = [
         [0, 1, 2], // row 1
         [3, 4, 5], // row 2
@@ -32,5 +32,11 @@ function checkWinnwer() {
         [0, 4, 8], // diagonal
         [2, 4, 6], // diagonal
     ];
-    // need to finish function 
+     for (const pattern of winPatterns){
+      const [a,b,c] = pattern;
+      const cellA = gridCells[a].textContent;
+      const cellB = gridCells[b].textContent;
+      const cellC = gridCells[C].textContent;
+        
+     }
 }
