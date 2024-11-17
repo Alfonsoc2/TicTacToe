@@ -43,4 +43,20 @@ button {
     border: 5px solid black;
     color: black;
 }
-
+#gameResult{
+    font-size: 4vw;
+    font-weight: 900;
+    margin: 10px;
+    background-color: #0BDA51;
+    border: 5px solid black;
+    color: black;
+    
+}   
+#playerTurn {
+    font-size: 4vw;
+    font-weight: 900;
+    margin: 10px;
+    background-color: #0BDA51;
+    border: 5px solid black;
+    color: black;
+}

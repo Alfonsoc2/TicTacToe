@@ -1,17 +1,33 @@
 const gridCells = document.querySelectorAll('.gameGrid');
 const reset = document.getElementById('reset');
+const resultDiv = document.getElementById('gameResult')
+const pTurnDiv = document.getElementById('playerTurn')
 
 let currentPlayer = "X";
+let gameOver = false
 
 
 
 
 gridCells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
-        if (!cell.textContent) {
+        if (!cell.textContent && !gameOver) {
             cell.textContent = currentPlayer;
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+
+            const winner = checkWinner();
+            if (winner) {
+                resultDiv.textContent = `${winner} Wins!`;
+                gameOver = true;
+                pTurnDiv.textContent = 'Game Over!';
+            } else if (Array.from(gridCells).every(cell => cell.textContent)){
+                resultDiv.textContent = `It's a draw !!!`;
+                gameOver = true;
+                pTurnDiv.textContent = 'Game Over!';
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            pTurnDiv.textContent = `${currentPlayer}'s Turn`;
         }
+    }
     });
 });
 reset.addEventListener('click', () => {
@@ -19,6 +35,9 @@ reset.addEventListener('click', () => {
         cell.textContent ='';
     });
     currentPlayer = 'X' ;
+    gameOver = false;
+    resultDiv.textContent = '';
+    pTurnDiv.textContent = `X's Turn`;
 });
 
 function checkWinner() {
@@ -36,9 +55,9 @@ function checkWinner() {
       const [a,b,c] = pattern;
       const cellA = gridCells[a].textContent;
       const cellB = gridCells[b].textContent;
-      const cellC = gridCells[C].textContent;
+      const cellC = gridCells[c].textContent;
     
-      if (cellA && cellA === cellB & cellB === cellC) {
+      if (cellA && cellA === cellB && cellB === cellC) {
         return cellA;
       }
      }
