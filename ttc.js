@@ -20,7 +20,7 @@ gridCells.forEach((cell, index) => {
                 gameOver = true;
                 pTurnDiv.textContent = 'Game Over!';
             } else if (Array.from(gridCells).every(cell => cell.textContent)){
-                resultDiv.textContent = `It's a draw !!!`;
+                resultDiv.textContent = `It's A Draw !!!`;
                 gameOver = true;
                 pTurnDiv.textContent = 'Game Over!';
             } else {
